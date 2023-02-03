@@ -1,0 +1,47 @@
+<html>
+    
+    <head>
+        <title>Moar IO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <center>
+            <h1>Welcome to the Time Warp</h1>
+        </center>
+
+        Enter name: <input type="text" id="name"><br /><br />
+        Enter age: <input type="text" id="age">&nbsp;&nbsp;
+        <button onclick="futureAge()">Submit</button>
+
+        <div id="result"></div>
+
+        <!--
+            We want the user to input their name and their age, then display
+            on the screen how old they will be in two years.
+        -->
+
+        <script>
+
+            // This function will get the name and the age of the user
+            // and then output a message about how old they will be
+            // in two years.
+            function futureAge() {
+                
+                // let userName = document.querySelector("#name").value;
+                let userName = document.getElementById('name').value;
+                let userAge = Number(document.getElementById('age').value);
+                console.log(userName, ' ', userAge);
+
+                console.log('Welcome ' + userName + ', in two years you will be ' + (userAge + 2) + ' years.');
+                // document.write('Welcome ' + userName + ', in two years you will be ' + (userAge + 2) + ' years.');
+                
+                document.getElementById('result').innerHTML = '<h1>Welcome</h1> ' + userName + ', in two years you will be ' + (userAge + 2) + ' years.';
+
+            }
+
+        </script>
+
+    </body>
+
+</html>
