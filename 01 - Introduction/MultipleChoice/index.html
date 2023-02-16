@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .answer {
+            padding-left: 30px;
+        }
+        
+        .question {
+            margin-bottom: 12px;
+            font-weight: bold;
+
+        }
+
+        .question-container {
+            border: 2px dotted black;
+            padding: 10px;
+            border-radius: 15px;
+            width: 40%;
+            min-width: 300px;
+        }
+
+        .answer-text {
+            color: red;
+            font-size: 20pt;
+        }
+
+        button {
+            margin: 7px;
+            padding: 3px 10px 3px 10px;
+            border-radius: 25px;
+            background-color: #1e90ff;
+            color: white;
+            font-weight: bold;
+            border: 0px;
+        }
+
+    </style>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="question-container">
+        
+        <div class="question">How far from Earth is the sun?</div>
+
+        <div class="answer">
+            <input type="radio" name="distance" value="true" id="93m">
+            <label for="93m">93 million miles</label>
+        </div>
+
+        <div class="answer">
+            <input type="radio" name="distance" value="false" id="93k">
+            <label for="93k">93 million kilometers</label>
+        </div>
+
+        <div class="answer">
+            <input type="radio" name="distance" value="false" id="11b">
+            <label for="11b">Eleventy Billion</label>
+        </div>
+        
+        <div class="answer">
+            <input type="radio" name="distance" value="false" id="earths">
+            <label for="earths">A lot of Earths</label>
+        </div>        
+
+        <div class="answer-text" id="feedback"></div>
+
+        <button id="check-work" onclick="checkWork()">CHECK</button>
+        <button id="reset" style="background-color: green;" onclick="reset()">RESET</button>
+
+    </div>
+
+    <script>
+        "use strict"
+
+        const DEBUG = false;
+
+        function checkWork() {
+            
+            // console.log("checkWork() start");
+
+            let choices = document.querySelectorAll('input[name="distance"]');
+            
+            // if (DEBUG == true)
+            if (DEBUG) {
+
+                // console.log(choices);
+
+                // console.log(choices[0].checked);
+                // console.log(choices[1].checked);
+                // console.log(choices[2].checked);
+                // console.log(choices[3].checked);
+            
+            }
+
+            let feedback = document.getElementById("feedback");
+
+            if (true == choices[0].checked) {
+                // document.getElementById("feedback").innerHTML = "CORRECT! YAY!";
+                // document.getElementById("feedback").style.color = "green";
+
+                feedback.innerHTML = "CORRECT! YAY!";
+                feedback.style.color = "green";
+
+            } else {
+
+                feedback.innerHTML = "You can do better!";
+                feedback.style.color = "red";
+
+            }
+
+            
+            // console.log("checkWork() end");
+            
+        }
+
+        function reset() {
+            document.getElementById("feedback").innerHTML = "";
+            let choices = document.querySelectorAll('input[name="distance"]');
+
+            choices[0].checked = false;
+            choices[1].checked = false;
+            choices[2].checked = false;
+            choices[3].checked = false;
+        }
+    </script>
+
+</body>
+</html>
