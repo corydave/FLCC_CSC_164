@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Fun</title>
+</head>
+<body>
+    <h1>Monopoly Dice</h1>
+
+
+Die 1 = <span id="output1"></span>
+<br />
+Die 2 = <span id="output2"></span>
+<br />
+<div id="doubles"></div>
+<button onclick="rollDice()">ROLL</button>
+
+<script>
+
+    "use strict"
+
+    let doublesCounter = 0;
+
+    function rollDice() {
+
+        let die1 = rollDie();
+        document.getElementById("output1").innerHTML = die1;
+        
+        let die2 = rollDie();
+        document.getElementById("output2").innerHTML = die2;
+    
+        let doubles = false;
+        
+
+        if (die1 == die2) {
+            doubles == true;
+            doublesCounter++;
+            document.getElementById("doubles").innerHTML = "You got doubles! [" + doublesCounter + "]";
+            
+        } else {
+            document.getElementById("doubles").innerHTML = "<br />";
+            doublesCounter = 0;
+        }
+    
+    }
+
+    function rollDie() {
+
+        let die = Math.random(); // [0, 1)
+        // Math.random is 0.00000000 to 0.99999999999
+
+        // die = die * 10; // [0.0000 to 9.999999]
+        // die = die * 6; // [0.000000 to 5.9999999]
+        die *= 6;
+
+        // die = Math.floor(die) + 1;
+
+        die = Math.ceil(die); // Math.ceil will ALWAYS round up
+        // that means 0.00000 will be 1 and 5.99999 will be 6
+
+        // document.getElementById("test").innerHTML = die;
+
+        return die;
+        
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
