@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>and or</title>
+</head>
+<body>
+    
+    <h1>ANSWER</h1>
+    <div id="answer">abc</div>
+
+    <script>
+        "use strict"
+
+        let age = 34;
+        let height = 70;
+
+        // for AND (&&) to be true, BOTH parts need to be true
+        if (age >= 40 && height >= 50) {
+            document.getElementById('answer').innerHTML = "AFFIRMATIVE";
+        } else {
+            document.getElementById('answer').innerHTML = "NEGATIVE";
+        }
+
+        // for OR (||) to be true, *at least* one part needs to be true
+        if (age >= 40 || height >= 50) {
+            document.getElementById('answer').innerHTML = "AFFIRMATIVE";
+        } else {
+            document.getElementById('answer').innerHTML = "NEGATIVE";
+        }
+
+    </script>
+
+
+</body>
+</html>
