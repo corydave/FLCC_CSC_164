@@ -1,0 +1,71 @@
+<HTML>
+  <HEAD>
+    <TITLE>Loops</TITLE>
+    <style>
+        .countdown {
+            font-size:33pt;
+            color: #1e90ff;
+        }
+    </style>
+  </HEAD>
+
+  <BODY>
+
+    <button onclick="count()">START</button>
+    <div class="countdown" id="app"></div>
+    
+
+    <script>
+        "use strict";
+        
+        let app = document.getElementById("app");
+        // app.innerHTML = "hi";
+        // app.style.color = "#1e90ff";
+
+        function count() {
+            
+            for (let i = 10; i > -1; i--) {
+                app.innerText = i;
+                console.log(i);
+                
+                // PARAMETER/ARGUMENT in a function
+                timer(1000);
+
+            }
+
+
+        }
+
+        function timer(mSeconds) {
+            let start = new Date();
+            let current = new Date();
+            
+            // let j = 0;
+            
+            while (current - start < mSeconds) {
+                current = new Date();
+                // console.log(j);
+                // j++;
+            }
+        }
+
+        function demo() {
+
+            // FOR loops have to have a START, TEST, and INCREMENT (UPDATE)
+
+            let i = -1;
+            // console.log("i = " + i);
+
+            for (i = 1; i <= 10; i*=2) {
+                console.log(i);
+            }
+
+            console.log("i = " + i);
+
+        }
+
+
+
+    </script>
+  </BODY>
+</HTML>
