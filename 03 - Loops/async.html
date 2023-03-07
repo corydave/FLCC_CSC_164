@@ -1,0 +1,36 @@
+<!-- <div id="test" onclick="async()">TEST</div> -->
+<div id="test" onclick="count()">TEST</div>
+
+
+<script>
+
+function async() {
+
+        "use strict";
+
+        console.log("A");
+        
+        setTimeout(() => console.log("B"), 2000);
+        
+        console.log("C");
+
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function count() {
+            let app = document.getElementById("test");
+            await sleep(1000);
+            app.innerText = "";
+            for (let i = 10; i > -1; i--) {
+                app.innerText = i;
+                console.log(i);
+
+            }
+
+        }
+
+
+</script>
