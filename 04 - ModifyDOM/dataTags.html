@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- https://unsplash.com/photos/Hzbq4de24kQ-->
+    <img onclick="displayInfo(this.dataset.name, this.dataset.age)" id="oakTree" src="tree.jpg" alt="A tree" title="A tree" data-name="oak tree" data-age="200" width="500" />
+
+    <!-- https://unsplash.com/photos/8hTWsi2OSoA -->
+    <img onclick="displayInfo(this.dataset.name, this.dataset.age)" id="pineTree" src="pine.jpg" alt="A tree" title="A tree" data-name="pine tree" data-age="110" width="500" />
+
+
+    <script>
+
+        "use strict";
+
+        function displayInfo(type, age) {
+
+            window.alert("TYPE: " + type + "\nAGE: " + age);
+        }
+
+    </script>
+
+</body>
+</html>
