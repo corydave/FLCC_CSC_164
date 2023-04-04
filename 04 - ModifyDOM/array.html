@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Demo</title>
+</head>
+<body>
+    
+    <button onclick="listNames()">LIST NAMES</button>
+    <div id="listOfNames"></div>
+    <br />
+    <button onclick="pickRandomName()">RANDOMIZE</button>
+    <div id="randomName"></div>
+
+
+    <script>
+        "use strict";
+
+        // let names = [4, 6, 2, 1, 7];
+        let names = ["Dave", "Ethan", "Alex", "Nico", "Paul", "Dylan", "Carter", "Sam"];
+        //  names       0       1       2        3      4        5
+        console.log(names[3]);
+
+        function listNames() {
+
+            // console.log(names);
+            names.sort();
+            // console.log(names);
+
+            let output = "";
+
+            for (let i = 0; i < names.length; i++) {
+                output += names[i] + "\n";
+            }
+
+            document.getElementById('listOfNames').innerText = output;
+        }
+
+        function pickRandomName() {
+
+            // Get a random number between 0 and the length of the array `names`
+            let randomNumber = Math.floor(Math.random() * names.length);
+            console.log(randomNumber);
+
+            // Get a name from `names` at the random
+            let randName = names[randomNumber];
+
+            document.getElementById("randomName").innerText = randName;
+        }
+
+
+    </script>
+</body>
+</html>
