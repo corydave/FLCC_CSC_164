@@ -1,0 +1,63 @@
+.container {
+    /* background-color: #ababab; */
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.title {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.inputBox {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    border: 1px solid #121212;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.btn {
+    background-color: purple;
+    color: #ffffff;
+    padding: 7px 20px;
+    border-radius: 15px;
+    border: 0px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listContainer {
+    width: 100%;
+    background-color:orange;
+    text-align: center;
+    padding: 12px;
+}
+
+.listItems {
+    background-color: green;
+    padding: 20px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
