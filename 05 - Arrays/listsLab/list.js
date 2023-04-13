@@ -9,19 +9,19 @@ function addName() {
 }
 
 function showNames() {
-    console.log("addName() has been called");
+    console.log("showNames() has been called");
 }
 
 function sortNames() {
-    console.log("addName() has been called");
+    console.log("sortNames() has been called");
 }
 
 function reverseNames() {
-    console.log("addName() has been called");
+    console.log("reverseNames() has been called");
 }
 
 function random() {
-    console.log("addName() has been called");
+    console.log("random() has been called");
 }
 
 function clearNames() {
