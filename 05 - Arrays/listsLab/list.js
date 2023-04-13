@@ -1,0 +1,31 @@
+"use strict";
+
+// Declare a list - it's OK if the list has no values yet.
+let names = [];
+document.getElementById("nameBox").focus();
+
+function addName() {
+    console.log("addName() has been called");
+}
+
+function showNames() {
+    console.log("addName() has been called");
+}
+
+function sortNames() {
+    console.log("addName() has been called");
+}
+
+function reverseNames() {
+    console.log("addName() has been called");
+}
+
+function random() {
+    console.log("addName() has been called");
+}
+
+function clearNames() {
+    names = [];
+    console.log("names = " + names);
+    showNames();
+}

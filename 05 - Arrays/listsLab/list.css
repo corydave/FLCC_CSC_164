@@ -1,0 +1,32 @@
+.container-main {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    font-family: 'Comfortaa', sans-serif;
+    padding: 20px;
+    text-align: center;
+    min-width: 400px; 
+    width: 40%;
+    max-width: 700px;
+    border-radius: 15px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.btn {
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #121212;
+    text-align: center;
+    font-family: 'Comfortaas', sans-serif;
+    border: 0px;
+    padding: 5px;
+    margin: 0px 12px;
+}
+
+.rect {
+    width: 200px;
+    border-radius: 0px;
+    margin: 3px;
+}

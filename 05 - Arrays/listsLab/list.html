@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Names List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="list.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="container-main">
+            <h1>NAMES LIST</h1>
+            <input id="nameBox" />
+            <button class="btn" onclick="addName()">Add name</button>
+            <br /><br /><br />
+            <button class="btn rect" onclick="showNames()">Show Names</button>
+            <button class="btn rect" onclick="reverseNames()">Reverse Names</button>
+            <button class="btn rect" onclick="sortNames()">Sort Names</button>
+            <button class="btn rect" onclick="random()">Random</button>
+            <button class="btn rect" onclick="clearNames()">Clear Names</button>
+            <br /><br />
+            <div class="output" id="output"></div>
+        </div>
+        
+        <script src="list.js"></script>
+
+    </body>
+</html>
