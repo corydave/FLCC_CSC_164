@@ -22,6 +22,12 @@ function reverseNames() {
 
 function random() {
     console.log("random() has been called");
+    window.alert(names[Math.floor(Math.random() * names.length)]);
+
+    
+    
+
+
 }
 
 function clearNames() {
