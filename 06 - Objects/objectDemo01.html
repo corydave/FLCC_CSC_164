@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<!-- 
+    JSON files are JavaScript Object Notation (you might hear it pronounced "JaSON")
+      - Lightweight (it's just a text file)
+      - Easy to read by humans
+      - Integrates with almost every other language
+
+      let characterName01 = "Gandolf";
+      let characterEyes01 = "brown";
+      let characterSpeed01 = 10;
+      let ...
+
+      KEY/VALUE PAIR
+
+      let character01 = {
+        "name": "Gandolf",
+        "eyes": "brown",
+        "speed": 10,
+        "inventory": ["potion", "staff", "book"]
+      }
+
+      let character02 = {
+        "name": "Frodo",
+        "eyes": "blue",
+        "speed": 6,
+        "inventory": ["ring", "sandwich"]
+      }
+
+      console.log(character01.eyes);
+
+      let players = [character01, character02];
+
+      for (let i = 0; i < players.length; i++) {
+        console.log(players[i].name);
+      }
+
+-->
+
+<body>
+
+    <h1>Hobbitsis</h1>
+
+    <ul id="fellowship">
+        <li id="hobbit01"></li><br />
+        <li id="hobbit02"></li>
+    </ul>
+
+    <script>
+        "use strict";
+
+        let frodo = {
+            "name": "Frodo",
+            "height": 48,
+            "inventory": ["ring", "sandwich"]
+        }
+
+        let sam = {
+            "name": "Samwise",
+            "height": 38,
+            "inventory": ["sword", "sandwich", "hat", "another sandwich"]
+        }
+
+        console.log(frodo);
+        let temp = document.getElementById("hobbit01");
+        temp.innerHTML += "Name = " + frodo.name;
+        temp.innerHTML += "<br />Height = " + frodo.height;
+        temp.innerHTML += "<br />Inventory = " + frodo.inventory;
+
+        let temp2 = document.getElementById("hobbit02");
+        temp2.innerHTML += "Name = " + sam.name;
+        temp2.innerHTML += "<br />Height = " + sam.height;
+        temp2.innerHTML += "<br />Inventory = " + sam.inventory;
+
+
+    </script>
+
+</body>
+</html>

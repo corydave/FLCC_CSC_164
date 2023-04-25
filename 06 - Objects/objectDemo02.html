@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The RIGHT Way</title>
+</head>
+
+<body>
+
+    <h1>Now, for the right way...</h1>
+
+    <ul id="rebels"></ul>
+
+    <button onclick="revealRebels()">REVEAL REBELS</button>
+
+    <script>
+
+        "use strict";
+
+        // let temp = [asdf, asdf, asdf]
+
+        let rebelAlliance = {
+            rebels:
+                [
+                    {
+                        "name": "Luke",
+                        "force": true,
+                        "ship": "X-Wing",
+                        "inventory": ["droid", "lightsaber", "grappling hook"],
+                        "age": 25
+                    },
+                    {
+                        "name": "Han Solo",
+                        "force": false,
+                        "ship": "Millenium Falcon",
+                        "inventory": ["Companion, Chewy", "blaster"],
+                        "age": 35
+                    },
+                    {
+                        "name": "Leia",
+                        "force": true,
+                        "ship": "Alderann Diplomatic Cruiser",
+                        "inventory": ["R2-D2"],
+                        "age": 25
+                    }                                        
+
+                ]
+        }
+
+        function revealRebels() {
+            let spot = document.getElementById("rebels");
+            let html = "";
+            // spot.innerHTML = rebelAlliance;
+            // spot.innerHTML = rebelAlliance.rebels;
+            // console.log(rebelAlliance.rebels);
+
+            for (let i = 0; i < rebelAlliance.rebels.length; i++) {
+                // console.log(rebelAlliance.rebels[i]);
+                html += "<li>";
+                html += "Name: " + rebelAlliance.rebels[i].name;
+                html += "<br />Force: " + rebelAlliance.rebels[i].force;
+                html += "<br />Ship: " + rebelAlliance.rebels[i].ship;
+                // html += "<br />Inventory: " + rebelAlliance.rebels[i].inventory;
+                html += "<br />Age: " + rebelAlliance.rebels[i].age;
+                html += "</li><br />";
+            }
+
+            spot.innerHTML = html;
+
+        }
+    </script>
+
+</body>
+</html>
