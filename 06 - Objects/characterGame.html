@@ -41,6 +41,9 @@
             <br />
 
             <button onclick="addCharacter()">Add Character</button>
+            <br />
+            <br />
+            <button onclick="showCharacters()">Show Characters</button>
 
         </div>
 
@@ -49,8 +52,14 @@
 
             "use strict";
 
+            // Declare the array that will hold the characters
             let characters = [];
 
+            // Set the FOCUS to the `name` field
+            document.getElementById('charName').focus();
+
+            // Declare the CLASS, called `Player`, that describes the attributes
+            // of each character
             class Player {
                 constructor(name, attack, defense, speed) {
                     this.name = name;
@@ -60,23 +69,36 @@
                 }
             }
 
+            // Get the input from the user and then create the character. Then
+            // add the new character, a `Player`, into the array.
             function addCharacter() {
+
+                // Here's where we get the input from the user:
                 let tempName = document.getElementById("charName").value;
                 let tempAttack = document.getElementById("charAttack").value;
                 let tempDefense = document.getElementById("charDefense").value;
                 let tempSpeed = document.getElementById("charSpeed").value;
 
+                // Here's where we add the new `Player` to the array:
                 characters.push(new Player(tempName, tempAttack, tempDefense, tempSpeed));
 
-                // console.log("DEBUG: " + tempName + " " + tempAttack + " " + tempDefense + " " + tempSpeed);
-
-                console.log(characters);
-                
                 clearContents();
+
             }
 
+            // Clear the input from the user, prepping for another new character
             function clearContents() {
-                // let
+                let blanks = document.getElementsByTagName("input");
+                
+                for (let i = 0; i < blanks.length; i++) {
+                    blanks[i].value = "";
+                }
+
+                document.getElementById('charName').focus();
+            }
+
+            function showCharacters() {
+                console.log(characters);
             }
 
 
