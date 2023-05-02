@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .topNav {
+            width: 600px;
+            background-color: green;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .mainStage {
+            width: 600px;
+            padding: 10px;
+            /* background-color: red; */
+            height: 500px;
+            text-align: center;
+            border: 1px solid black;
+            overflow-y: auto;
+        }
+
+        .btn {
+            background-color: orange;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20pt;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .container {
+            background-color: #1e90ff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="topNav">
+        <button class="btn" id="charBtn" onclick="changeScene('charContainer')">CHARACTER</button>
+        <button class="btn" id="charBtn" onclick="changeScene('statsContainer')">STATS</button>
+        <button class="btn" id="charBtn" onclick="changeScene('battleContainer')">BATTLE</button>
+    </div>
+    
+    <div class="mainStage">
+        <div class="container" id="charContainer">
+            main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br />main<br /></div>
+        <div class="container" id="statsContainer" style="display:none;">stats</div>
+        <div class="container" id="battleContainer" style="display:none;">battle</div>
+    </div>
+
+    <script>
+        function changeScene(scene) {
+            document.getElementById("charContainer").style.display = "none";
+            document.getElementById("statsContainer").style.display = "none";
+            document.getElementById("battleContainer").style.display = "none";
+            
+            document.getElementById(scene).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
