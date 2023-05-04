@@ -1,0 +1,281 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GAME</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .charPrompt {
+                display: inline-block;
+                width: 120px;
+            }
+
+            .mainContainer {
+                width: 500px;
+                background-color: #1e90ff;
+                padding: 20px;
+                border-radius: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .createContainer {
+                display: block;    
+            }
+
+            .statsContainer {
+                display: none;
+            }
+
+            .battleContainer {
+                display: none;
+            }
+
+
+            .mainStage {
+                background-color: red;
+                padding: 20px;
+                height: 500px;
+                width: 600px;
+                display: inline-block;
+                overflow: auto;
+            }
+
+            .buttonBox {
+                width: 600px;
+                height: 50px;
+                background-color: green;
+                padding: 20px 20px 10px 20px;
+                text-align: center;
+                display: inline-block;
+            }
+
+            .sceneButton {
+                width: 150px;
+                background-color: orange;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 15px;
+                font-size: 20pt;
+                font-weight: bold;
+                display: inline-block;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        </style>
+
+
+
+    </head>
+    <body>
+        
+        <div class="buttonBox">
+            <div class="sceneButton" onclick="showScene('createContainer')">CREATE</div>
+            <div class="sceneButton" onclick="showScene('statsContainer')">STATS</div>
+            <div class="sceneButton" onclick="showScene('battleContainer')">BATTLE</div>
+        </div>
+        <br />
+
+        <div class="mainStage">
+            <div class="mainContainer createContainer" id="createContainer" >
+                <h1>GAME</h1>
+
+
+                <div class="charPrompt">NAME: </div><input type="text" id="charName"><br /><br />
+                <div class="charPrompt">ATTACK: </div><input type="text" id="charAttack"><br /><br />
+                <div class="charPrompt">DEFENSE: </div><input type="text" id="charDefense"><br /><br />
+                <div class="charPrompt">SPEED: </div><input type="text" id="charSpeed"><br /><br />
+
+                <br />
+
+                <button onclick="addCharacter()">Add Character</button>
+                <br />
+                <br />
+                <button onclick="showCharacters()">Show Characters</button>
+                <br />
+                <br />
+                <button onclick="generateRandomCharacter()">DEBUG - Standard Characters</button>
+            </div>
+            <div class="mainContainer statsContainer" id="statsContainer" >
+                <div id="characterList"></div>
+            </div>
+            <div class="mainContainer battleContainer" id="battleContainer" >
+                <button id="battleButton" onclick="attack()">FIGHT!</button>
+            </div>
+    </div>
+
+        
+
+        <script>
+
+            "use strict";
+
+            // Declare the array that will hold the characters
+            let characters = [];
+
+            // Set the FOCUS to the `name` field
+            document.getElementById('charName').focus();
+
+            // Declare the CLASS, called `Player`, that describes the attributes
+            // of each character
+            class Player {
+                constructor(name, attack, defense, speed) {
+                    this.name = name;
+                    this.attack = attack;
+                    this.defense = defense;
+                    this.speed = speed;
+                    this.wins = 0;
+                    this.losses = 0;
+                    this.ties = 0;
+                }
+
+                showStats() {
+                    console.log("Name: " + this.name);
+                    console.log("Attack: " + this.attack);
+                    console.log("Defense: " + this.defense);
+                    console.log("Speed: " + this.speed);
+                    console.log("Wins: " + this.wins);
+                    console.log("Losses: " + this.losses);
+                    console.log("Ties: " + this.ties);
+
+                }
+
+        
+            }
+
+            // test();
+
+            function showScene(scene) {
+                document.getElementById("createContainer").style.display = "none";
+                document.getElementById("statsContainer").style.display = "none";
+                document.getElementById("battleContainer").style.display = "none";
+                document.getElementById(scene).style.display = "block";
+
+            }
+
+            function test() {
+                let char1 = characters.push(new Player("Dave", 10, 10, 10));
+                let char2 = characters.push(new Player("John", 11, 10, 10));
+
+                char2.showStats();
+                console.log();
+                attack(char1, char2);
+                
+            }
+
+            function rollDie(sides) {
+                return Math.floor((Math.random() * sides) + 1);
+            }
+
+            function attack() {
+
+                let c1 = characters[0];
+                let c2 = characters[1];
+
+                console.log(c1.attack);
+                console.log(c2.defense);
+
+                while (true) {
+                    
+                    if (c1.attack > c2.defense) {
+                        c2.defense -= (c1.attack - c2.defense);
+                        console.log("new c2 defense: " + c2.defense);
+                    } if (c1.attack < c2.defense) {
+                        c1.attack -= 1;
+                        console.log("new c1 attack: " + c1.attack);
+                    } else {
+                        c1.attack -= 1;
+                        c2.defense -= 1;
+                        console.log("new c1 attack: " + c1.attack + " new c2 defense: " + c2.defense);
+                    }
+
+                    if (c2.defense <= 0) {
+                        window.alert(c2.name + " lost :(");
+                        break;
+                    }
+
+                    if (c2.attack > c1.defense) {
+                        c1.defense -= (c2.attack - c1.defense);
+                        console.log("new c1 defense: " + c1.defense);
+                    } if (c2.attack < c1.defense) {
+                        c2.attack -= 1;
+                        console.log("new c2 attack: " + c2.attack);
+                    } else {
+                        c2.attack -= 1;
+                        c1.defense -= 1;
+                        console.log("new c2 attack: " + c2.attack + " new c1 defense: " + c1.defense);
+                    }
+
+                    if (c1.defense <= 0) {
+                        window.alert(c1.name + " lost :(");
+                        break;
+                    }
+
+                }
+
+
+
+            }
+
+            // Get the input from the user and then create the character. Then
+            // add the new character, a `Player`, into the array.
+            function addCharacter() {
+
+                // Here's where we get the input from the user:
+                let tempName = document.getElementById("charName").value;
+                let tempAttack = document.getElementById("charAttack").value;
+                let tempDefense = document.getElementById("charDefense").value;
+                let tempSpeed = document.getElementById("charSpeed").value;
+
+                // Here's where we add the new `Player` to the array:
+                characters.push(new Player(tempName, tempAttack, tempDefense, tempSpeed));
+
+                clearContents();
+
+            }
+
+            // Clear the input from the user, prepping for another new character
+            function clearContents() {
+                let blanks = document.getElementsByTagName("input");
+
+                for (let i = 0; i < blanks.length; i++) {
+                    blanks[i].value = "";
+                }
+
+                document.getElementById('charName').focus();
+            }
+
+            function generateRandomCharacter() {
+                let name = "PLAYER " + characters.length;
+                characters.push(new Player(name, rollDie(20), rollDie(20), rollDie(20)));
+                showCharacters();
+            }
+
+            function showCharacters() {
+                console.log(characters);
+                var container = document.getElementById("characterList");
+                
+                var html = "";
+
+                for (var i = 0; i < characters.length; i++) {
+                    html += "Name: " + characters[i].name + "<br />";
+                    html += "Attack: " + characters[i].attack + "<br />";
+                    html += "Defense: " + characters[i].defense + "<br />";
+                    html += "Speed: " + characters[i].speed + "<br />";
+                    html += "<br /><hr />";
+                }
+
+                container.innerHTML = html;
+                
+            }
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
